@@ -1,11 +1,9 @@
-## React.js Boilerplate
+## Visitor
 
-It is a basic React.js project boilerplate, it uses JSX, React Router, Browserify and SASS.
+Front end for Visitor uses JSX, React Router, Browserify and SASS.
 
 ### Usage
 
-- `git clone https://github.com/AbeEstrada/react-boilerplate.git`
-- `cd react-boilerplate`
 - `npm install`
 - `npm start`
 

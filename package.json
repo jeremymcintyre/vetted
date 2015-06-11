@@ -1,15 +1,15 @@
 {
-  "name": "reactjs-boilerplate",
+  "name": "Visitor",
   "version": "0.1.0",
-  "description": "React.js Boilerplate",
+  "description": "Front End for Visitor app - built off React.js Boilerplate by Abraham Estrada",
   "scripts": {
     "start": "gulp serve"
   },
-  "author": "Abraham Estrada",
+  "author": "Jeremy McIntyre",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AbeEstrada/reactjs-boilerplate.git"
+    "url": "https://github.com/jeremymcintyre/visitor.git"
   },
   "dependencies": {
     "react": "^0.12.2",
