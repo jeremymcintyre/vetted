@@ -5,7 +5,7 @@ var ServerActionCreators = require('../actions/ServerActionCreators');
 var ApiUtils = {
   loadVisitors () {
     // xhr.getJSON(`${API}/visitors`, (err, res) => {
-      ServerActionCreators.loadedVisitors(["b", "j", "k"]);
+      ServerActionCreators.loadedVisitors(["Brian", "Jeremy", "Kendal"]);
     // });
   },
 
