@@ -8,7 +8,7 @@ var Home = React.createClass({
 			<div className="home">
 				<h2>Home</h2>
 				<ul>
-					<li><Link to="visitors" params={{name: "world"}}>Hello World</Link></li>
+					<li><Link to="visitors" params={{name: "Jeremy"}}>See Visitors</Link></li>
 				</ul>
 			</div>
 		);

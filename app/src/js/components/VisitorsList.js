@@ -16,6 +16,18 @@ var VisitorsList = React.createClass({
     ViewActionCreators.loadVisitors();
   },
 
+  componentWillUnmount () {
+    VisitorsStore.removeChangeListener(this.handleStoreChange);
+  },
+
+  handleStoreChange () {
+    this.setState(VisitorsStore.getState());
+  },
+
+  deleteVisitor (visitor) {
+    ViewActionCreators.deleteVisitor(visitor);
+  },
+
   renderVisitors () {
     return this.state.visitors.map((visitor) => {
       return <li>
@@ -25,10 +37,6 @@ var VisitorsList = React.createClass({
         </button>
       </li>;
     });
-  },
-
-  deleteVisitor (visitor) {
-    ViewActionCreators.deleteVisitor(visitor);
   },
 
   render () {

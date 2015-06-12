@@ -4,15 +4,15 @@ var ServerActionCreators = require('../actions/ServerActionCreators');
 
 var ApiUtils = {
   loadVisitors () {
-    xhr.getJSON(`${API}/visitors`, (err, res) => {
-      ServerActionCreators.loadedVisitors();
-    });
+    // xhr.getJSON(`${API}/visitors`, (err, res) => {
+      ServerActionCreators.loadedVisitors(["b", "j", "k"]);
+    // });
   },
 
   deleteVisitor (visitor) {
-    xhr.deleteJSON(`$(API/visitors/${visitor.id}`, (err, res) => {
+    // xhr.deleteJSON(`$(API/visitors/${visitor.id}`, (err, res) => {
       ServerActionCreators.deletedVisitor(visitor);
-    });
+    // });
   }
 };
 

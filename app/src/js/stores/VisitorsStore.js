@@ -7,7 +7,7 @@ var events = new EventEmitter();
 var CHANGE_EVENT = 'CHANGE';
 
 var state = {
-  visitors: ["Brian", "Jeremy"],
+  visitors: [],
   loaded: false
 };
 
@@ -41,7 +41,7 @@ VisitorsStore.dispatchToken = AppDispatcher.register((payload) => {
   }
   if (action.type === ActionTypes.VISITOR_DELETED) {
     var remainingVisitors = state.visitors.filter((visitor) => {
-      return visitor.id !== action.visitor.id;
+      return visitor !== action.visitor;
     });
     setState({ visitors: remainingVisitors });
   }
