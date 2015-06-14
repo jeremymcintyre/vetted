@@ -13,7 +13,17 @@ var ApiUtils = {
     // xhr.deleteJSON(`$(API/visitors/${visitor.id}`, (err, res) => {
       ServerActionCreators.deletedVisitor(visitor);
     // });
+  },
+
+  loadActivities () {
+    ServerActionCreators.loadedActivities([
+        {name: "SO", notes: "Get the wings"},
+        {name: "Bear Brewing", notes: "ESB Nitro is amazing"},
+        {name: "Sextant", notes: "Cappuccino, mocha or cold brew"},
+        {name: "Laguna", notes: "Awesome hookah / open late night life"}
+      ]);
   }
+
 };
 
 module.exports = ApiUtils;

@@ -16,6 +16,13 @@ var ViewActionCreators = {
       visitor: visitor
     });
     ApiUtil.deleteVisitor(visitor);
+  },
+
+  loadActivities () {
+    AppDispatcher.handleViewAction({
+      type: ActionTypes.LOAD_ACTIVITIES
+    });
+    ApiUtil.loadActivities();
   }
 };
 

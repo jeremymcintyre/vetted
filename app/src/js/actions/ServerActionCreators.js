@@ -14,6 +14,13 @@ var ServerActionCreators = {
       type: ActionTypes.VISITOR_DELETED,
       visitor: visitor
     });
+  },
+
+  loadedActivities (activities) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.ACTIVITIES_LOADED,
+      activities: activities
+    });
   }
 
 };

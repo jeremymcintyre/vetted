@@ -10,15 +10,21 @@ var Activity = require('./Activity');
 var ActivityList = React.createClass({
   mixins: [ Router.State ],
 
-  // SEEDS FOR DISPLAY PURPOSES ONLY
   getInitialState () {
-    return {
-      activities: [
-        {name: "SO", notes: "Get the wings"},
-        {name: "Bear Brewing", notes: "ESB Nitro is amazing"},
-        {name: "Sextant", notes: "Cappuccino, mocha or cold brew"}
-      ]
-    };
+    return ActivityStore.getState();
+  },
+
+  componentDidMount () {
+    ActivityStore.addChangeListener(this.handleStoreChange);
+    ViewActionCreators.loadActivities();
+  },
+
+  componentWillUnmount () {
+    ActivityStore.removeChangeListener(this.handleStoreChange);
+  },
+
+  handleStoreChange () {
+    this.setState(ActivityStore.getState());
   },
 
   renderActivities () {
@@ -29,10 +35,11 @@ var ActivityList = React.createClass({
 
   render () {
     return (
-      <div>{this.renderActivities()}</div>
+      <div>{ this.renderActivities() }</div>
     )
   }
 });
 
 
 module.exports = ActivityList;
+

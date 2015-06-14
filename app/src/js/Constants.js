@@ -4,9 +4,11 @@ module.exports = {
   // API: 'http://localhost',
 
   ActionTypes: keyMirror({
-    VISITORS_LOADED: null,
     LOAD_VISITORS: null,
-    VISITOR_DELETED: null
+    VISITORS_LOADED: null,
+    VISITOR_DELETED: null,
+    LOAD_ACTITIVES: null,
+    ACTIVITIES_LOADED: null
   }),
 
   PayloadSources: keyMirror({
