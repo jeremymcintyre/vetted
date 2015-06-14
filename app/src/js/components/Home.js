@@ -1,15 +1,19 @@
 var React = require('react');
 var Router = require('react-router');
 var { Link } = Router;
+var mui = require('material-ui');
+var AppBar = mui.AppBar;
+var ActivityList = require('./ActivityList');
+
 
 var Home = React.createClass({
+  mixins: [ Router.State ],
+
 	render: function() {
 		return (
-			<div className="home">
-				<h2>Home</h2>
-				<ul>
-					<li><Link to="visitors" params={{name: "Jeremy"}}>See Visitors</Link></li>
-				</ul>
+			<div>
+				<AppBar title="Activities - Home" />
+        <ActivityList />
 			</div>
 		);
 	}
