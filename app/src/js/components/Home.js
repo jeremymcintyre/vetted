@@ -11,7 +11,7 @@ var Home = React.createClass({
 	render () {
 		return (
 			<div>
-				<AppBar text="Activities - Home" />
+				<AppBar text="Activities" />
         <ActivityList />
 			</div>
 		);

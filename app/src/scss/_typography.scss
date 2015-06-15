@@ -1,9 +1,11 @@
+
+
 body {
   font-family: 'Roboto';
 }
 
 .app-bar {
-  font-size: 2em;
+  font-size: 1.7em;
   color: #D1C4E9;
 }
 
@@ -11,9 +13,13 @@ body {
   text-align: center;
 }
 
+.add-button {
+  font-size: 1.3em;
+}
+
 .activity {
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.3em;
+  line-height: 1.3em;
   text-align: left;
   }
   .activity:hover {

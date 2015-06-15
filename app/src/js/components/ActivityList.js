@@ -3,7 +3,6 @@ var Router = require('react-router');
 var { Link } = Router;
 var ViewActionCreators = require('../actions/ViewActionCreators');
 var ActivityStore = require('../stores/ActivityStore');
-var mui = require('material-ui');
 var Activity = require('./Activity');
 
 
