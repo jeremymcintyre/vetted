@@ -9,7 +9,7 @@ var ActivityList = require('./ActivityList');
 var Home = React.createClass({
   mixins: [ Router.State ],
 
-	render: function() {
+	render () {
 		return (
 			<div>
 				<AppBar title="Activities - Home" />

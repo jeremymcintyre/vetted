@@ -1,6 +1,5 @@
 var React = require('react');
 var Router = require('react-router');
-var { Link } = Router;
 
 var Activity = React.createClass({
   mixins: [ Router.State ],
@@ -21,20 +20,19 @@ var Activity = React.createClass({
 
   renderNotes (notes) {
     if (this.state.showNotes)
-      return notes;
+      return <div className="note">{notes}</div>;
   },
 
   render () {
     var notes = this.props.params.notes;
     return (
-      <div>
-        <Link to={"/activities/" + this.props.params.name} onClick={ this.toggleShow }>
-          <div>{ this.props.params.name }</div>
-        </Link>
-        <div>{ this.renderNotes(notes) }</div>
+      <div className="activity" onClick={ this.toggleShow }>
+        <div>{ this.props.params.name }</div>
+        { this.renderNotes(notes) }
       </div>
     )
   }
 });
 
 module.exports = Activity;
+
