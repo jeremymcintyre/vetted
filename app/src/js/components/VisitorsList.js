@@ -3,9 +3,6 @@ var VisitorsStore = require('../stores/VisitorsStore');
 var ViewActionCreators = require('../actions/ViewActionCreators');
 var Router = require('react-router');
 var { Link } = Router;
-var mui = require('material-ui');
-var RaisedButton = mui.RaisedButton;
-var TextField = mui.TextField;
 
 var VisitorsList = React.createClass({
   mixins: [ Router.State ],
@@ -37,13 +34,13 @@ var VisitorsList = React.createClass({
         <li style={{
           height: '50px'}}>
           {visitor}
-          <RaisedButton
+          <div
             onClick={this.deleteVisitor.bind(this, visitor)}
             label="Delete"
             style={{
               position: 'absolute',
               left: '30%'
-            }} />
+            }}></div>
         </li>)
     });
   },
