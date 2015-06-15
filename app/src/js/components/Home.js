@@ -1,8 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
 var { Link } = Router;
-var mui = require('material-ui');
-var AppBar = mui.AppBar;
+var AppBar = require('./AppBar');
 var ActivityList = require('./ActivityList');
 
 
@@ -12,7 +11,7 @@ var Home = React.createClass({
 	render () {
 		return (
 			<div>
-				<AppBar title="Activities - Home" />
+				<AppBar text="Activities - Home" />
         <ActivityList />
 			</div>
 		);
