@@ -1,0 +1,32 @@
+$sidebarwidth: 250px;
+$pad-top-bottom: 10px;
+$pad-left-right: 15px;
+
+.sidebar-menu {
+  display:block;
+
+  >div {
+    position:absolute;
+    z-index:2;
+    top:70px;
+    width: $sidebarwidth;
+    height:100%;
+    background: #fff;
+
+    &.left {
+      left: $sidebarwidth*-1;
+
+      &.visible {
+        left: 0;
+      }
+    }
+
+    .visitor {
+      float:left;
+      width: $sidebarwidth - 2*$pad-left-right;
+      padding: $pad-top-bottom $pad-left-right;
+      border-bottom:solid 1px #555;
+      cursor:pointer;
+    }
+  }
+}

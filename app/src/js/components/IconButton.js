@@ -10,9 +10,9 @@ var IconButton = React.createClass({
   },
 
   render () {
-    var classes = this.buildClassList(this.props.classList)
+    var classes = this.buildClassList(this.props.classList);
     return (
-      <div className={ classes }>{ this.props.icon }</div>
+      <div onClick={this.props.handleClick} className={ classes }>{ this.props.icon }</div>
     );
   }
 });

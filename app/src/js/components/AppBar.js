@@ -5,7 +5,7 @@ var AppBar = React.createClass({
   render () {
     return (
       <div className="app-bar">
-        <IconButton icon="☰" />
+        <IconButton handleClick={this.props.leftClick} icon="☰" />
         { this.props.text }
         <IconButton icon="+" classList='add-button' />
       </div>

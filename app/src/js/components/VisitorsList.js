@@ -2,7 +2,6 @@ var React = require('react');
 var VisitorsStore = require('../stores/VisitorsStore');
 var ViewActionCreators = require('../actions/ViewActionCreators');
 var Router = require('react-router');
-var { Link } = Router;
 
 var VisitorsList = React.createClass({
   mixins: [ Router.State ],
@@ -31,33 +30,17 @@ var VisitorsList = React.createClass({
   renderVisitors () {
     return this.state.visitors.map((visitor) => {
       return (
-        <li style={{
-          height: '50px'}}>
+        <div className="visitor">
           {visitor}
-          <div
-            onClick={this.deleteVisitor.bind(this, visitor)}
-            label="Delete"
-            style={{
-              position: 'absolute',
-              left: '30%'
-            }}></div>
-        </li>)
+          <div onClick={this.deleteVisitor.bind(this, visitor)}>Delete</div>
+        </div>)
     });
   },
 
   render () {
-    var name = this.getParams().name;
-    return (
-      <div className="visitors">
-        <h2>Hello {name}</h2>
-        <TextField hintText="New Visitor" />
-        <ul>
-          {this.renderVisitors()}
-          <li><Link to="home">Go Home</Link></li>
-        </ul>
-      </div>
-    );
+    return <div>{ this.renderVisitors() }</div>;
   }
+
 });
 
 module.exports = VisitorsList;

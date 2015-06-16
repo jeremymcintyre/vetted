@@ -3,15 +3,23 @@ var Router = require('react-router');
 var { Link } = Router;
 var AppBar = require('./AppBar');
 var ActivityList = require('./ActivityList');
+var SideBarMenu = require('./SideBarMenu');
+var VisitorsList = require('./VisitorsList');
 
 
 var Home = React.createClass({
   mixins: [ Router.State ],
 
+  toggleLeft () {
+    this.refs.left.toggle();
+  },
+
 	render () {
 		return (
 			<div>
-				<AppBar text="Activities" />
+				<AppBar leftClick={this.toggleLeft} text="Activities" />
+        <SideBarMenu children={<VisitorsList/>} ref='left' alignment='left'>
+        </SideBarMenu>
         <ActivityList />
 			</div>
 		);
