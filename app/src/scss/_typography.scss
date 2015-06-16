@@ -17,16 +17,17 @@ body {
   font-size: 1.3em;
 }
 
-.activity {
+.activity, .visitor {
   font-size: 1.3em;
   line-height: 1.3em;
   text-align: left;
-  }
-  .activity:hover {
+  &:hover {
     background: rgba(0,0,0,0.05);
   }
+}
 
-.note {
+
+.note, .visitor>div {
   color: #777;
   font-weight: 100;
 }

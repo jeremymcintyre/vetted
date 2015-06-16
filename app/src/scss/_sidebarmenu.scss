@@ -1,6 +1,14 @@
-$sidebarwidth: 250px;
+$sidebarwidth: 270px;
 $pad-top-bottom: 10px;
-$pad-left-right: 15px;
+$pad-left-right: 20px;
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
 
 .sidebar-menu {
   display:block;
@@ -15,6 +23,7 @@ $pad-left-right: 15px;
 
     &.left {
       left: $sidebarwidth*-1;
+      @include transition(left 0.5s);
 
       &.visible {
         left: 0;
@@ -24,9 +33,13 @@ $pad-left-right: 15px;
     .visitor {
       float:left;
       width: $sidebarwidth - 2*$pad-left-right;
+      box-shadow: 0 1px 2px #ccc;
       padding: $pad-top-bottom $pad-left-right;
-      border-bottom:solid 1px #555;
       cursor:pointer;
+      >div {
+        display: inline-block;
+        float: right;
+      }
     }
   }
 }
