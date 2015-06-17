@@ -1,6 +1,5 @@
 .activity {
-  box-shadow: 0 1px 2px #ddd;
+  @extend %divider-dark;
   padding: 10px 20px;
-  background-opacity: 0;
   cursor: pointer;
 }

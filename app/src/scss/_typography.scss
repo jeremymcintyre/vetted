@@ -2,11 +2,12 @@
 
 body {
   font-family: 'Roboto';
+  @include black-with($primary-opacity, 'color');
 }
 
 .app-bar {
   font-size: 1.7em;
-  color: #D1C4E9;
+  @include white-with($primary-opacity, 'color');
 }
 
 .icon-button {
@@ -22,17 +23,17 @@ body {
   line-height: 1.3em;
   text-align: left;
   &:hover {
-    background: rgba(0,0,0,0.05);
+    @include black-with($divider-opacity, 'background');
   }
 }
 
 
 .note {
-  color: #777;
-  font-weight: 100;
+  @include black-with($secondary-opacity, 'color');
+  font-weight: 300;
 }
 
 .delete-icon {
-  color: #555;
+  color: $black;
   font-weight: 500;
 }

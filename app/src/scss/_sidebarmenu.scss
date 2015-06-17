@@ -11,7 +11,7 @@ $pad-left-right: 20px;
     top:70px;
     width: $sidebarwidth;
     height:100%;
-    background: #fff;
+    background: $background;
     left: $sidebarwidth*-1;
     @include transition(left 0.5s);
 
@@ -27,19 +27,19 @@ $pad-left-right: 20px;
 
   &.show-delete {
     display: inline-block;
-    opacity: 0.5;
-    @include transition(opacity 0.2s);
+    opacity: $hint-opacity;
+    @include transition(opacity 0.15s);
 
     &:hover {
-      opacity: 1;
+      opacity: $secondary-opacity;
     }
   }
 }
 
 .visitor {
+  @extend %divider-dark;
   float:left;
   width: $sidebarwidth - 2*$pad-left-right;
-  box-shadow: 0 1px 2px #ccc;
   padding: $pad-top-bottom $pad-left-right;
   cursor:pointer;
 }
@@ -49,13 +49,13 @@ $pad-left-right: 20px;
 @include keyframes(display-none-transition) {
   0% { display: none; opacity: 0; }
   1% { display: block; }
-  100% { opacity: 0.8; }
+  100% { opacity: $primary-opacity; }
 }
 
 #screen {
   display: none;
   opacity: 0;
-  background: #000;
+  background: $screen;
   position: absolute;
   right: 0;
   width: 100%;
@@ -66,7 +66,7 @@ $pad-left-right: 20px;
 
   &.visible {
     display: block;
-    opacity: 0.8;
+    opacity: $primary-opacity;
   }
 }
 
