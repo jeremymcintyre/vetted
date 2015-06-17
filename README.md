@@ -1,6 +1,6 @@
 ## Visitor
 
-Front end for Visitor uses JSX, React Router, Browserify and SASS.
+Front end for Visitor app uses JSX, React Router, Browserify and SASS.
 
 ### Usage
 
