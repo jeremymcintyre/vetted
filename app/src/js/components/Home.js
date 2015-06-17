@@ -18,7 +18,7 @@ var Home = React.createClass({
 		return (
 			<div>
 				<AppBar leftClick={this.toggleLeft} text="Activities" />
-        <SideBarMenu children={<VisitorsList/>} ref='left' alignment='left'>
+        <SideBarMenu offMenuClick={this.toggleLeft} children={<VisitorsList/>} ref='left' alignment='left'>
         </SideBarMenu>
         <ActivityList />
 			</div>

@@ -20,7 +20,7 @@ var SideBarMenu = React.createClass({
     var classList = this.buildClassList(alignment);
     return (
       <div className="sidebar-menu">
-        <div className={classList} id="screen"></div>
+        <div onClick={this.props.offMenuClick} className={classList} id="screen"></div>
         <div className={classList}>
           {this.props.children}
         </div>
