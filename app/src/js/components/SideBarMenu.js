@@ -17,9 +17,11 @@ var SideBarMenu = React.createClass({
 
   render () {
     var alignment = this.props.alignment;
+    var classList = this.buildClassList(alignment);
     return (
       <div className="sidebar-menu">
-        <div className={this.buildClassList(alignment)}>
+        <div className={classList} id="screen"></div>
+        <div className={classList}>
           {this.props.children}
         </div>
       </div>
