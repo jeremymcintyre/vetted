@@ -2,6 +2,7 @@ var React = require('react');
 var VisitorsStore = require('../stores/VisitorsStore');
 var ViewActionCreators = require('../actions/ViewActionCreators');
 var Router = require('react-router');
+var Visitor = require('./Visitor');
 
 var VisitorsList = React.createClass({
   mixins: [ Router.State ],
@@ -29,11 +30,9 @@ var VisitorsList = React.createClass({
 
   renderVisitors () {
     return this.state.visitors.map((visitor) => {
-      return (
-        <div className="visitor">
-          {visitor}
-          <div onClick={this.deleteVisitor.bind(this, visitor)}>Delete</div>
-        </div>)
+      return <Visitor
+        handleDelete={this.deleteVisitor.bind(this, visitor)}
+        visitorInfo={visitor} />
     });
   },
 

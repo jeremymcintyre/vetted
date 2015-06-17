@@ -5,35 +5,43 @@ $pad-left-right: 20px;
 .sidebar-menu {
   display:block;
 
-  >div {
+  .left {
     position:absolute;
     z-index:2;
     top:70px;
     width: $sidebarwidth;
     height:100%;
     background: #fff;
+    left: $sidebarwidth*-1;
+    @include transition(left 0.5s);
 
-    &.left {
-      left: $sidebarwidth*-1;
-      @include transition(left 0.5s);
-
-      &.visible {
-        left: 0;
-      }
-    }
-
-    .visitor {
-      float:left;
-      width: $sidebarwidth - 2*$pad-left-right;
-      box-shadow: 0 1px 2px #ccc;
-      padding: $pad-top-bottom $pad-left-right;
-      cursor:pointer;
-      >div {
-        display: inline-block;
-        float: right;
-      }
+    &.visible {
+      left: 0;
     }
   }
+}
+
+.delete-icon {
+  float: right;
+  display: none;
+
+  &.show-delete {
+    display: inline-block;
+    opacity: 0.5;
+    @include transition(opacity 0.2s);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.visitor {
+  float:left;
+  width: $sidebarwidth - 2*$pad-left-right;
+  box-shadow: 0 1px 2px #ccc;
+  padding: $pad-top-bottom $pad-left-right;
+  cursor:pointer;
 }
 
 
@@ -41,25 +49,24 @@ $pad-left-right: 20px;
 @include keyframes(display-none-transition) {
   0% { display: none; opacity: 0; }
   1% { display: block; }
-  100% { opacity: 0.7; }
+  100% { opacity: 0.8; }
 }
 
 #screen {
   display: none;
   opacity: 0;
   background: #000;
-  position: fixed;
+  position: absolute;
   right: 0;
   width: 100%;
   height: 100%;
   margin-top: -3px;
   z-index: 1;
-  animation-name: display-none-transition;
-  animation-duration: 1s;
   @include animation('display-none-transition 0.5s');
+
   &.visible {
     display: block;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
 

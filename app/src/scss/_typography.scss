@@ -27,7 +27,12 @@ body {
 }
 
 
-.note, .visitor>div {
+.note {
   color: #777;
   font-weight: 100;
+}
+
+.delete-icon {
+  color: #555;
+  font-weight: 500;
 }
