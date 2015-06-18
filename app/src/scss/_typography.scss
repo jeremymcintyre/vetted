@@ -6,13 +6,13 @@ body {
 }
 
 .app-bar {
-  font-size: 1.7em;
+  font-size: 1.3em;
   @include white-with($primary-opacity, 'color');
 }
 
 .tab a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1em;
   @include white-with($primary-opacity, 'color');
 }
 

@@ -5,9 +5,11 @@ var { Link } = Router;
 var TabBar = React.createClass({
 
   renderTabs (tabs) {
+    var percentWidth = {width: 100/tabs.length + "%"};
+    console.log(percentWidth);
     return tabs.map((tab) => {
       return (
-        <div className="tab">
+        <div style={percentWidth} className="tab">
           <Link to={ tab }>{ tab }</Link>
         </div>
       );
