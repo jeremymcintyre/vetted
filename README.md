@@ -1,4 +1,4 @@
-## Visitor
+## Vetted
 
 Front end (in progress) for Visitor app uses JSX, React Router, Browserify and SASS.
 
