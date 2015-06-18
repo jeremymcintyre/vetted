@@ -6,7 +6,7 @@ var TabBar = React.createClass({
 
   renderTabs (tabs) {
     var percentWidth = {width: 100/tabs.length + "%"};
-    console.log(percentWidth);
+
     return tabs.map((tab) => {
       return (
         <div style={percentWidth} className="tab">
