@@ -1,0 +1,12 @@
+.visitor {
+  @extend %divider-dark;
+  padding-left: $pad-left-right;
+  padding-top: $pad-top-bottom;
+  padding-bottom: $pad-top-bottom;
+  cursor:pointer;
+
+  .delete-icon {
+    position: absolute;
+    right: $pad-left-right;
+  }
+}

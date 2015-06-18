@@ -10,6 +10,12 @@ body {
   @include white-with($primary-opacity, 'color');
 }
 
+.tab a {
+  text-decoration: none;
+  font-size: 1.5em;
+  @include white-with($primary-opacity, 'color');
+}
+
 .icon-button {
   text-align: center;
 }

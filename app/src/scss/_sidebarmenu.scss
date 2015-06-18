@@ -1,6 +1,5 @@
 $sidebarwidth: 300px;
-$pad-top-bottom: 10px;
-$pad-left-right: 20px;
+
 
 .sidebar-menu {
   display:block;
@@ -22,6 +21,14 @@ $pad-left-right: 20px;
       left: 0;
     }
   }
+
+  .visitor {
+    @extend %divider-dark;
+    float:left;
+    width: $sidebarwidth - 2*$pad-left-right;
+    padding: $pad-top-bottom $pad-left-right;
+    cursor:pointer;
+  }
 }
 
 .delete-icon {
@@ -39,13 +46,7 @@ $pad-left-right: 20px;
   }
 }
 
-.visitor {
-  @extend %divider-dark;
-  float:left;
-  width: $sidebarwidth - 2*$pad-left-right;
-  padding: $pad-top-bottom $pad-left-right;
-  cursor:pointer;
-}
+
 
 
 
