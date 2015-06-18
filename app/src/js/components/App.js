@@ -4,7 +4,6 @@ var { RouteHandler, Link } = Router;
 var AppBar = require('./AppBar');
 var TabBar = require('./TabBar');
 var SideBarMenu = require('./SideBarMenu');
-var VisitorsList = require('./VisitorsList');
 
 var App = React.createClass({
 
@@ -18,7 +17,7 @@ var App = React.createClass({
         <TabBar tabs={["Visitors", "Activities", "Map"]} />
         <SideBarMenu
           offMenuClick={this.toggleLeft}
-          children={<VisitorsList/>}
+          children={["About","Settings"]}
           ref='left'
           alignment='left' />
         <RouteHandler />

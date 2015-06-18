@@ -20,7 +20,7 @@ $sidebarwidth: 300px;
     }
   }
 
-  .visitor {
+  .sidebar-item {
     @extend %divider-dark;
     float:left;
     width: $sidebarwidth - 2*$pad-left-right;

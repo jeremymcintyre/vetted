@@ -15,14 +15,21 @@ var SideBarMenu = React.createClass({
     return (this.state.visible ? "visible " : "") + alignment;
   },
 
+  renderChildren (children) {
+    return children.map((child) => {
+      return <div className="sidebar-item">{child}</div>
+    });
+  },
+
   render () {
     var alignment = this.props.alignment;
     var classList = this.buildClassList(alignment);
     return (
       <div className="sidebar-menu">
-        <div onClick={this.props.offMenuClick} className={classList} id="screen"></div>
+        <div onClick={this.props.offMenuClick} className={classList} id="screen">
+        </div>
         <div className={classList}>
-          {this.props.children}
+          {this.renderChildren(this.props.children)}
         </div>
       </div>
     )
