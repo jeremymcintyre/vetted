@@ -29,6 +29,12 @@ $primary-opacity: 0.87;
 %divider-dark { border-bottom: 1px solid rgba(0,0,0, $divider-opacity); }
 %divider-light { border-bottom: 1px solid rgba(255,255,255, $divider-opacity); }
 
+%text-defaults {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  text-align: left;
+}
+
 $pad-top-bottom: 10px;
 $pad-left-right: 20px;
 

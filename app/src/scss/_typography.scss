@@ -24,12 +24,31 @@ body {
   font-size: 1.3em;
 }
 
-.activity, .visitor, .map, .sidebar-item {
-  font-size: 1.3em;
-  line-height: 1.3em;
-  text-align: left;
+.activity,
+.visitor,
+.map,
+.sidebar-item {
+  @extend %text-defaults;
   &:hover {
     @include black-with($divider-opacity, 'background');
+  }
+}
+
+.sidebar-item a {
+  text-decoration: none;
+  @include black-with($primary-opacity, 'color');
+}
+
+article {
+  max-width: 400px;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 5*$pad-top-bottom auto;
+  padding: 0 2*$pad-left-right;
+  text-align: center;
+
+  p {
+    margin-top: 3*$pad-top-bottom;
   }
 }
 

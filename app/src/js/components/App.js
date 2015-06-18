@@ -10,6 +10,7 @@ var App = React.createClass({
   toggleLeft () {
     this.refs.left.toggle();
   },
+
   render: function() {
     return (
       <div className="container">
@@ -17,7 +18,10 @@ var App = React.createClass({
         <TabBar tabs={["Visitors", "Activities", "Map"]} />
         <SideBarMenu
           offMenuClick={this.toggleLeft}
-          children={["About","Settings"]}
+          children={[
+            {name: "About", path: "About"},
+            {name: "Settings", path: "/"}
+            ]}
           ref='left'
           alignment='left' />
         <RouteHandler />

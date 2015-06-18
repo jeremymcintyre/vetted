@@ -1,4 +1,6 @@
 var React = require('react');
+var Router = require('react-router');
+var { Link } = Router;
 
 var SideBarMenu = React.createClass({
   getInitialState () {
@@ -17,7 +19,11 @@ var SideBarMenu = React.createClass({
 
   renderChildren (children) {
     return children.map((child) => {
-      return <div className="sidebar-item">{child}</div>
+      return (
+        <div className="sidebar-item">
+          <Link onClick={this.toggle} to={ child.path }>{child.name}</Link>
+        </div>
+      );
     });
   },
 
