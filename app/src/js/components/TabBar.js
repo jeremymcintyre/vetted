@@ -10,7 +10,7 @@ var TabBar = React.createClass({
     return tabs.map((tab, i) => {
       return (
         <div key={i} style={percentWidth} className="tab">
-          <Link to={ tab }>{ tab }</Link>
+          <Link to={ tab.path || tab }>{ tab.name || tab }</Link>
         </div>
       );
     });

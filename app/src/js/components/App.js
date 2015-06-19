@@ -15,7 +15,11 @@ var App = React.createClass({
     return (
       <div className="container">
         <AppBar leftClick={this.toggleLeft} text="vetted" />
-        <TabBar tabs={["Visitors", "Activities", "Map"]} />
+        <TabBar tabs={[
+          {name: "Who with?", path: "Visitors"},
+          "Activities",
+          "Map"
+          ]} />
         <SideBarMenu
           offMenuClick={this.toggleLeft}
           children={[
