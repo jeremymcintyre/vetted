@@ -14,12 +14,17 @@
   }
 
   a {
-    padding: 15px 0;
+    padding: 15px 0 13px 0;
     display: inline-block;
     width: 100%;
     height: 100%;
     position: relative;
     top: 25%;
+    border-bottom: 2px solid $primary;
+
+    &.active {
+      border-bottom: 2px solid $accent-fallback-dark;
+    }
   }
 
 }

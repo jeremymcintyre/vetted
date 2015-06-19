@@ -7,9 +7,9 @@ var TabBar = React.createClass({
   renderTabs (tabs) {
     var percentWidth = {width: 100/tabs.length + "%"};
 
-    return tabs.map((tab) => {
+    return tabs.map((tab, i) => {
       return (
-        <div style={percentWidth} className="tab">
+        <div key={i} style={percentWidth} className="tab">
           <Link to={ tab }>{ tab }</Link>
         </div>
       );
@@ -20,6 +20,7 @@ var TabBar = React.createClass({
     return (
       <div className="tab-bar">
         {this.renderTabs(this.props.tabs)}
+        <div id="active-bar"></div>
       </div>
     );
   }

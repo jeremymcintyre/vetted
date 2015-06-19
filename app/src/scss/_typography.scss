@@ -27,7 +27,7 @@ body {
 .activity,
 .visitor,
 .map,
-.sidebar-item {
+.sidebar-item a {
   @extend %text-defaults;
   &:hover {
     @include black-with($divider-opacity, 'background');

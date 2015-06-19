@@ -29,8 +29,9 @@ var VisitorsList = React.createClass({
   },
 
   renderVisitors () {
-    return this.state.visitors.map((visitor) => {
+    return this.state.visitors.map((visitor, i) => {
       return <Visitor
+        key={i}
         handleDelete={this.deleteVisitor.bind(this, visitor)}
         visitorInfo={visitor} />
     });

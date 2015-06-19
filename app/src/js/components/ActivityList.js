@@ -27,8 +27,8 @@ var ActivityList = React.createClass({
   },
 
   renderActivities () {
-    return this.state.activities.map((activity) => {
-      return <Activity params={ activity } />
+    return this.state.activities.map((activity, i) => {
+      return <Activity key={i} params={ activity } />
     });
   },
 

@@ -18,9 +18,9 @@ var SideBarMenu = React.createClass({
   },
 
   renderChildren (children) {
-    return children.map((child) => {
+    return children.map((child, i) => {
       return (
-        <div className="sidebar-item">
+        <div key={i} className="sidebar-item">
           <Link onClick={this.toggle} to={ child.path }>{child.name}</Link>
         </div>
       );
