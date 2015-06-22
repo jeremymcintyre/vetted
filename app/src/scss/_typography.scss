@@ -7,6 +7,7 @@ body {
 
 .app-bar {
   font-size: 1.3em;
+  text-decoration: none;
   @include white-with($primary-opacity, 'color');
 }
 
@@ -22,6 +23,10 @@ body {
 
 .add-button {
   font-size: 1.3em;
+  @include white-with($primary-opacity, 'color');
+  a {
+    text-decoration: none;
+  }
 }
 
 .activity,

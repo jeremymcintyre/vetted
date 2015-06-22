@@ -4,7 +4,9 @@ var Visitor = React.createClass({
 
   getInitialState () {
     return {
-      buttonClass: ""
+      buttonClass: "",
+      selected: false,
+      classList: "visitor"
     }
   },
 
@@ -14,12 +16,25 @@ var Visitor = React.createClass({
     });
   },
 
+  toggleShowSelected () {
+    var classList = "visitor";
+
+    if (!this.state.selected)
+      classList += " selected";
+
+    this.setState({
+      selected: !this.state.selected,
+      classList: classList
+    });
+  },
+
   render () {
     return (
       <div
-        onMouseEnter={this.toggleShowDelete}
-        onMouseLeave={this.toggleShowDelete}
-        className="visitor">
+        onMouseEnter={ this.toggleShowDelete }
+        onMouseLeave={ this.toggleShowDelete }
+        onClick={ this.toggleShowSelected }
+        className={ this.state.classList} >
         {this.props.visitorInfo}
         <div className={this.state.buttonClass + "delete-icon"} onClick={this.props.handleDelete}>X</div>
       </div>

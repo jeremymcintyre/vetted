@@ -9,4 +9,10 @@
     position: absolute;
     right: $pad-left-right;
   }
+
+  &.selected:after {
+    content: '✓';
+    color: #2E7D32;
+    padding-left: 10px;
+  }
 }
