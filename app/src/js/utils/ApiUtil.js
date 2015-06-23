@@ -3,15 +3,15 @@ var { API, ActionTypes } = require('../Constants');
 var ServerActionCreators = require('../actions/ServerActionCreators');
 
 var ApiUtils = {
-  loadVisitors () {
-    // xhr.getJSON(`${API}/visitors`, (err, res) => {
-      ServerActionCreators.loadedVisitors(["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "Indigo", "Juliet"]);
+  loadFriends () {
+    // xhr.getJSON(`${API}/friends`, (err, res) => {
+      ServerActionCreators.loadedFriends(["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "Indigo", "Juliet"]);
     // });
   },
 
-  deleteVisitor (visitor) {
-    // xhr.deleteJSON(`$(API/visitors/${visitor.id}`, (err, res) => {
-      ServerActionCreators.deletedVisitor(visitor);
+  deleteFriend (friend) {
+    // xhr.deleteJSON(`$(API/visitors/${friend.id}`, (err, res) => {
+      ServerActionCreators.deletedFriend(friend);
     // });
   },
 

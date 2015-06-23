@@ -2,17 +2,17 @@ var { ActionTypes } = require('../Constants');
 var AppDispatcher = require('../AppDispatcher');
 
 var ServerActionCreators = {
-  loadedVisitors (visitors) {
+  loadedFriends (friends) {
     AppDispatcher.handleServerAction({
-      type: ActionTypes.VISITORS_LOADED,
-      visitors: visitors
+      type: ActionTypes.FRIENDS_LOADED,
+      friends: friends
     });
   },
 
-  deletedVisitor (visitor) {
+  deletedFriend (friend) {
     AppDispatcher.handleServerAction({
       type: ActionTypes.VISITOR_DELETED,
-      visitor: visitor
+      friend: friend
     });
   },
 

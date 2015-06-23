@@ -1,12 +1,12 @@
 var React = require('react');
 
-var Visitor = React.createClass({
+var Friend = React.createClass({
 
   getInitialState () {
     return {
       buttonClass: "",
       selected: false,
-      classList: "visitor"
+      classList: "friend"
     }
   },
 
@@ -17,7 +17,7 @@ var Visitor = React.createClass({
   },
 
   toggleShowSelected () {
-    var classList = "visitor";
+    var classList = "friend";
 
     if (!this.state.selected)
       classList += " selected";
@@ -35,11 +35,11 @@ var Visitor = React.createClass({
         onMouseLeave={ this.toggleShowDelete }
         onClick={ this.toggleShowSelected }
         className={ this.state.classList} >
-        {this.props.visitorInfo}
-        <div className={this.state.buttonClass + "delete-icon"} onClick={this.props.handleDelete}>X</div>
+        { this.props.friendInfo }
+        <div className={ this.state.buttonClass + "delete-icon" } onClick={ this.props.handleDelete }>X</div>
       </div>
     )
   }
 });
 
-module.exports = Visitor;
+module.exports = Friend;

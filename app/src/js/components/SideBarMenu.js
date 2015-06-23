@@ -21,7 +21,7 @@ var SideBarMenu = React.createClass({
     return children.map((child, i) => {
       return (
         <div key={i} className="sidebar-item">
-          <Link onClick={this.toggle} to={ child.path }>{child.name}</Link>
+          <Link onClick={ this.toggle } to={ child.path }>{ child.name }</Link>
         </div>
       );
     });
@@ -32,10 +32,10 @@ var SideBarMenu = React.createClass({
     var classList = this.buildClassList(alignment);
     return (
       <div className="sidebar-menu">
-        <div onClick={this.props.offMenuClick} className={classList} id="screen">
+        <div onClick={ this.props.offMenuClick } className={ classList } id="screen">
         </div>
-        <div className={classList}>
-          {this.renderChildren(this.props.children)}
+        <div className={ classList }>
+          { this.renderChildren(this.props.children) }
         </div>
       </div>
     )

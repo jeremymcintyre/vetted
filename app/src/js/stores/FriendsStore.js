@@ -7,7 +7,7 @@ var events = new EventEmitter();
 var CHANGE_EVENT = 'CHANGE';
 
 var state = {
-  visitors: [],
+  friends: [],
   loaded: false
 };
 
@@ -16,7 +16,7 @@ var setState = (newState) => {
   events.emit(CHANGE_EVENT);
 };
 
-var VisitorsStore = {
+var FriendsStore = {
   addChangeListener (fn) {
     events.addListener(CHANGE_EVENT, fn);
   },
@@ -30,23 +30,23 @@ var VisitorsStore = {
   }
 };
 
-VisitorsStore.dispatchToken = AppDispatcher.register((payload) => {
+FriendsStore.dispatchToken = AppDispatcher.register((payload) => {
   var { action } = payload;
 
-  if (action.type === ActionTypes.VISITORS_LOADED) {
+  if (action.type === ActionTypes.FRIENDS_LOADED) {
     setState({
       loaded: true,
-      visitors: action.visitors
+      friends: action.friends
     });
   }
-  if (action.type === ActionTypes.VISITOR_DELETED) {
-    var remainingVisitors = state.visitors.filter((visitor) => {
-      return visitor !== action.visitor;
+  if (action.type === ActionTypes.FRIEND_DELETED) {
+    var remainingFriends = state.friends.filter((friend) => {
+      return friend !== action.friend;
     });
-    setState({ visitors: remainingVisitors });
+    setState({ friends: remainingFriends });
   }
 
 });
 
-module.exports = VisitorsStore;
+module.exports = FriendsStore;
 

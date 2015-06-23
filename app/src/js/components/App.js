@@ -16,7 +16,7 @@ var App = React.createClass({
       <div className="container">
         <AppBar leftClick={this.toggleLeft} text="vetted" />
         <TabBar tabs={[
-          {name: "Who with?", path: "Visitors"},
+          "Friends",
           "Activities",
           "Map"
           ]} />

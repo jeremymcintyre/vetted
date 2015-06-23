@@ -3,19 +3,19 @@ var AppDispatcher = require('../AppDispatcher');
 var ApiUtil = require('../utils/ApiUtil');
 
 var ViewActionCreators = {
-  loadVisitors () {
+  loadFriends () {
     AppDispatcher.handleViewAction({
-      type: ActionTypes.LOAD_VISITORS
+      type: ActionTypes.LOAD_FRIENDS
     });
-    ApiUtil.loadVisitors();
+    ApiUtil.loadFriends();
   },
 
-  deleteVisitor (visitor) {
+  deleteFriend (friend) {
     AppDispatcher.handleViewAction({
-      type: ActionTypes.VISITOR_DELETED,
-      visitor: visitor
+      type: ActionTypes.FRIEND_DELETED,
+      friend: friend
     });
-    ApiUtil.deleteVisitor(visitor);
+    ApiUtil.deleteFriend(friend);
   },
 
   loadActivities () {
