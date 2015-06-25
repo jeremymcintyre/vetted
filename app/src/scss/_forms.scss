@@ -1,0 +1,20 @@
+#activity-form {
+  width: 80%;
+  text-align: center;
+  margin: $pad-top-bottom auto;
+}
+
+#activity-name-input,
+#activity-description-input {
+  width: 100%;
+  display: block;
+  margin: $pad-top-bottom 0;
+}
+
+#activity-description-input {
+  height: 4em;
+}
+
+#char-count {
+  text-align: right;
+}

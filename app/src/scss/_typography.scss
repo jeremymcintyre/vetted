@@ -70,3 +70,27 @@ article {
   color: $black;
   font-weight: 500;
 }
+
+input, textarea {
+  font-size: 1em;
+  @include black-with($secondary-opacity, 'color');
+  &:focus {
+    @include black-with($primary-opacity, 'color');
+  }
+}
+
+#char-count {
+  @include black-with($hint-opacity, 'color');
+
+  &.getting-low {
+    @include black-with($secondary-opacity, 'color');
+  }
+
+  &.getting-lower {
+    @include black-with($primary-opacity, 'color');
+  }
+
+  &.low {
+    color: #C62828;
+  }
+}
