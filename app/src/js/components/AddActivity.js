@@ -1,11 +1,11 @@
 var React = require('react');
-var TabBar = require('./TabBar');
+var InfoBar = require('./InfoBar');
 
 var AddActivity = React.createClass({
   render () {
     return (
       <div>
-        <TabBar tabs={[{name: "New Activity", path: "AddActivity"}]} />
+        <InfoBar infoText="Describe activity" />
         <p>Hayyy</p>
       </div>
     )
