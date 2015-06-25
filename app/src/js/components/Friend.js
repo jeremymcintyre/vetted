@@ -2,6 +2,13 @@ var React = require('react');
 
 var Friend = React.createClass({
 
+  getDefaultProps () {
+    return {
+      selectable: false,
+      deletable: false
+    }
+  },
+
   getInitialState () {
     return {
       buttonClass: "",
@@ -10,10 +17,13 @@ var Friend = React.createClass({
     }
   },
 
+
   toggleShowDelete () {
-    this.setState({
-      buttonClass: (this.state.buttonClass === "") ? "show-delete " : ""
-    });
+    if (this.props.deletable) {
+      this.setState({
+        buttonClass: (this.state.buttonClass === "") ? "show-delete " : ""
+      });
+    }
   },
 
   toggleShowSelected () {

@@ -33,6 +33,7 @@ var FriendsList = React.createClass({
       return <Friend
         key={ i }
         selectable={ this.props.selectable }
+        deletable={ this.props.deletable }
         handleDelete={ this.deleteFriend.bind(this, friend) }
         friendInfo={ friend } />
     });

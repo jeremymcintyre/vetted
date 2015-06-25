@@ -3,7 +3,7 @@ var FriendsList = require('./FriendsList');
 
 var PickFriend = React.createClass({
   render () {
-    return <FriendsList selectable={false} />
+    return <FriendsList deletable={true} />
   }
 });
 
