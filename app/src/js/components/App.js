@@ -1,9 +1,9 @@
 var React = require('react');
 var Router = require('react-router');
-var { RouteHandler, Link } = Router;
+var { RouteHandler } = Router;
 var AppBar = require('./AppBar');
-var TabBar = require('./TabBar');
 var SideBarMenu = require('./SideBarMenu');
+var ActivityList = require('./ActivityList');
 
 var App = React.createClass({
 
@@ -14,15 +14,11 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <AppBar leftClick={this.toggleLeft} text="vetted" />
-        <TabBar tabs={[
-          "Friends",
-          "Activities",
-          "Map"
-          ]} />
+        <AppBar leftClick={ this.toggleLeft } text='vetted' />
         <SideBarMenu
-          offMenuClick={this.toggleLeft}
+          offMenuClick={ this.toggleLeft }
           children={[
+            {name: "Home", path: "/"},
             {name: "About", path: "About"},
             {name: "Settings", path: "/"}
             ]}
