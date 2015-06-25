@@ -10,6 +10,7 @@ var ActivitiesForFriend = require('./components/ActivitiesForFriend');
 var MapForFriend = require('./components/MapForFriend');
 var About = require('./components/About');
 var AddActivity = require('./components/AddActivity');
+var ChooseFriendsForActivity = require('./components/ChooseFriendsForActivity');
 
 var routes = (
     <Route path="/" handler={ App } >
@@ -20,7 +21,10 @@ var routes = (
         <Route name="Map" path="map" handler={ MapForFriend }/>
         <Route name="About" path="about" handler={ About }/>
       </Route>
-      <Route name="AddActivity" path="add-activity" handler={ AddActivity } />
+      <Route name="AddActivity" path="activity/new" handler={ AddActivity } />
+      <Route name="ChooseFriendsForActivity"
+             path="activity/new/choose-friends"
+             handler={ ChooseFriendsForActivity }/>
     </Route>
 );
 
