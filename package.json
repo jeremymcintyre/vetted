@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "react": "^0.13.0",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "flux": "^2.0.3"
   },
   "devDependencies": {
     "browserify": "^8.1.1",
