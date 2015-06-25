@@ -3,32 +3,48 @@ var InfoBar = require('./InfoBar');
 
 var AddActivity = React.createClass({
 
-  getInitialState () {
+  getDefaultProps () {
     return {
-      charsRemaining: "",
-      countClass: ""
+      maxNameLength: 40,
+      maxDescriptionLength: 120
     }
   },
 
-  countLength (event) {
-    var inputId = event.target.id,
-        inputLength = event.target.value.length,
-        maxLength,
-        charsRemaining;
-
-    if (inputId === "activity-name-input") {
-      maxLength = 40;
+  getInitialState () {
+    return {
+      charsRemaining: "",
+      countClass: "",
+      nameLength: 0,
+      descriptionLength: 0
     }
-    else if (inputId === "activity-description-input") {
-      maxLength = 120;
-    }
+  },
 
-    charsRemaining = maxLength - inputLength;
+  buildStateObject (event, maxLength, stateKey) {
+    var charsRemaining = maxLength - event.target.value.length,
+        stateObject = {
+          charsRemaining: charsRemaining,
+          countClass: this.charCountClass(charsRemaining)
+        };
+    stateObject[stateKey] = charsRemaining;
+    return stateObject;
+  },
 
-    this.setState({
-      charsRemaining: charsRemaining,
-      countClass: this.charCountClass(charsRemaining)
-    });
+  handleNameState (event) {
+    var maxLength = this.props.maxNameLength,
+        stateKey = 'nameLength';
+
+    this.setState(
+      this.buildStateObject(event, maxLength, stateKey)
+    );
+  },
+
+  handleDescriptionState (event) {
+    var maxLength = this.props.maxDescriptionLength,
+        stateKey = 'descriptionLength';
+
+    this.setState(
+      this.buildStateObject(event, maxLength, stateKey)
+    );
   },
 
   charCountClass (charsRemaining) {
@@ -54,13 +70,13 @@ var AddActivity = React.createClass({
           <input id="activity-name-input"
                  type="text"
                  placeholder="Name this thing"
-                 onFocus={ this.countLength }
-                 onChange={ this.countLength } />
+                 onFocus={ this.handleNameState }
+                 onChange={ this.handleNameState } />
           <textarea id="activity-description-input"
                  type="text"
                  placeholder="What's cool about it?"
-                 onFocus={ this.countLength }
-                 onChange={ this.countLength }
+                 onFocus={ this.handleDescriptionState }
+                 onChange={ this.handleDescriptionState }
                  selectionStart={120} />
           <div id="char-count" className={ this.state.countClass }>
             { this.state.charsRemaining }
