@@ -17,15 +17,17 @@ var Friend = React.createClass({
   },
 
   toggleShowSelected () {
-    var classList = "friend";
+    if (this.props.selectable) {
+      var classList = "friend";
 
-    if (!this.state.selected)
-      classList += " selected";
+      if (!this.state.selected)
+        classList += " selected";
 
-    this.setState({
-      selected: !this.state.selected,
-      classList: classList
-    });
+      this.setState({
+        selected: !this.state.selected,
+        classList: classList
+      });
+    }
   },
 
   render () {
@@ -34,7 +36,7 @@ var Friend = React.createClass({
         onMouseEnter={ this.toggleShowDelete }
         onMouseLeave={ this.toggleShowDelete }
         onClick={ this.toggleShowSelected }
-        className={ this.state.classList} >
+        className={ this.state.classList } >
         { this.props.friendInfo }
         <div className={ this.state.buttonClass + "delete-icon" } onClick={ this.props.handleDelete }>X</div>
       </div>

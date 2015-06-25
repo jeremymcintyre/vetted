@@ -7,7 +7,7 @@ var ChooseFriendsForActivity = React.createClass({
     return (
       <div>
         <InfoBar infoText="Who would like this?" />
-        <FriendsList />
+        <FriendsList selectable={true} />
       </div>
     )
   }

@@ -32,6 +32,7 @@ var FriendsList = React.createClass({
     return this.state.friends.map((friend, i) => {
       return <Friend
         key={ i }
+        selectable={ this.props.selectable }
         handleDelete={ this.deleteFriend.bind(this, friend) }
         friendInfo={ friend } />
     });
