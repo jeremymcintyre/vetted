@@ -18,7 +18,6 @@ var routes = (
       <Route handler={ HomeTabBar }>
         <DefaultRoute handler={ ActivityList }/>
         <Route name="Friends" path="friends" handler={ PickFriend }/>
-        <Route name="Activities" path="activities" handler={ ActivitiesForFriend }/>
         <Route name="Map" path="map" handler={ MapForFriend }/>
         <Route name="About" path="about" handler={ About }/>
       </Route>
