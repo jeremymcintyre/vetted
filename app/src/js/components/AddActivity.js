@@ -53,16 +53,10 @@ var AddActivity = React.createClass({
   },
 
   render () {
-    var height = window.innerHeight - 41;
-    var styles = {
-      container: {height: height + 'px'},
-      form: {height: height - 104 + 'px'}
-    };
-
     return (
-      <div style={styles.container}>
+      <div>
         <InfoBar infoText="Describe activity" />
-        <form id="activity-form" style={styles.form}>
+        <form id="activity-form">
           <input id="activity-name-input"
                  type="text"
                  placeholder="Name this thing"

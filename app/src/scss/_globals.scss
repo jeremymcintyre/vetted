@@ -7,6 +7,7 @@ $primary-dark: #512DA8;
 $accent: #18FFFF;
 $accent-fallback-light: #84FFFF;
 $accent-fallback-dark: #00E5FF;
+$accent-fallback-darkest: #00B8D4;
 $background: $white;
 $screen: $black;
 
@@ -42,6 +43,10 @@ html {
   width: 100%;
   height: 100%;
   @include black-with($secondary-opacity, 'background');
+}
+
+body {
+  position: relative;
 }
 
 body, .container {

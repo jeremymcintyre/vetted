@@ -101,10 +101,6 @@ input, textarea {
 
   a {
     text-decoration: none;
-    @include black-with($secondary-opacity, 'color');
-
-    &:hover {
-      color: $background;
-    }
+    color: $background;
   }
 }

@@ -1,7 +1,15 @@
 .progress-button {
   width: 100%;
-  background: $primary-light;
-  margin-top: -30px;
+  max-width: 400px;
+  background: $accent-fallback-dark;
+  position: fixed;
+  bottom: 0;
+
+  &.progress-button-friends {
+    display: block;
+    position: static;
+    margin-top: $pad-top-bottom;
+  }
 
   a {
     padding: 15px 0;
@@ -10,7 +18,7 @@
     height: 100%;
 
     &:hover {
-      background: $accent-fallback-dark;
+      background: $accent-fallback-darkest;
     }
   }
 }
