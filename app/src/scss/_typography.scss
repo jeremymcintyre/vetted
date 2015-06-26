@@ -94,3 +94,12 @@ input, textarea {
     color: #C62828;
   }
 }
+
+.form-button {
+  @include black-with($secondary-opacity, 'color');
+  font-size: 1.3em;
+
+  &:hover {
+    color: $background;
+  }
+}

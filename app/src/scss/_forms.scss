@@ -1,21 +1,46 @@
 #activity-form {
   width: 80%;
   text-align: center;
-  margin: $pad-top-bottom auto;
+  margin: 4*$pad-top-bottom auto;
 }
 
 #activity-name-input,
 #activity-description-input {
   width: 100%;
   display: block;
+  padding: $pad-top-bottom;
   margin: $pad-top-bottom 0;
+  margin-left: -$pad-top-bottom;
+  resize: none;
+  overflow: hidden;
+  border: 1px solid;
+  @include black-with($divider-opacity, 'border-color');
+  transition: box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 1px #969696;
+  }
 }
 
 #activity-description-input {
-  height: 4em;
+  height: 4.5em;
 }
 
 #char-count {
   text-align: right;
   height: 1em;
+}
+
+.form-button {
+  width: 30%;
+  background: $primary-light;
+  padding: $pad-top-bottom;
+  border-radius: 4px;
+  margin: 3*$pad-top-bottom auto;
+  box-shadow: 0 3px 5px #969696;
+
+  &:hover {
+    background: $accent-fallback-dark;
+  }
 }

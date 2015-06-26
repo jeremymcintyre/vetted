@@ -5,8 +5,8 @@ var AddActivity = React.createClass({
 
   getDefaultProps () {
     return {
-      maxNameLength: 40,
-      maxDescriptionLength: 120
+      nameMaxLength: 40,
+      descriptionMaxLength: 120
     }
   },
 
@@ -19,8 +19,10 @@ var AddActivity = React.createClass({
     }
   },
 
-  buildStateObject (event, maxLength, stateKey) {
-    var charsRemaining = maxLength - event.target.value.length,
+  buildStateObject (event, inputName) {
+    var maxLength = this.props[ inputName + 'MaxLength' ],
+        charsRemaining = maxLength - event.target.value.length,
+        stateKey = inputName + 'Length',
         stateObject = {
           charsRemaining: charsRemaining,
           countClass: this.charCountClass(charsRemaining)
@@ -30,36 +32,20 @@ var AddActivity = React.createClass({
   },
 
   handleNameState (event) {
-    var maxLength = this.props.maxNameLength,
-        stateKey = 'nameLength';
-
-    this.setState(
-      this.buildStateObject(event, maxLength, stateKey)
-    );
+    this.setState(this.buildStateObject(event, 'name'));
   },
 
   handleDescriptionState (event) {
-    var maxLength = this.props.maxDescriptionLength,
-        stateKey = 'descriptionLength';
-
-    this.setState(
-      this.buildStateObject(event, maxLength, stateKey)
-    );
+    this.setState(this.buildStateObject(event, 'description'));
   },
 
   charCountClass (charsRemaining) {
-    if (charsRemaining < 10) {
+    if (charsRemaining < 10)
       return "low";
-    }
-    else if (charsRemaining < 20) {
+    else if (charsRemaining < 20)
       return "getting-lower";
-    }
-    else if (charsRemaining < 40) {
+    else if (charsRemaining < 40)
       return "getting-low";
-    }
-    else {
-      return "";
-    }
   },
 
   render () {
@@ -81,7 +67,7 @@ var AddActivity = React.createClass({
           <div id="char-count" className={ this.state.countClass }>
             { this.state.charsRemaining }
           </div>
-          <input type="submit" name="Next" />
+          <div className="form-button">Next</div>
         </form>
       </div>
     )
