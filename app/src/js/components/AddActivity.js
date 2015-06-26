@@ -1,5 +1,9 @@
 var React = require('react');
 var InfoBar = require('./InfoBar');
+var Button = require('./Button');
+var Router = require('react-router');
+var { Link } = Router;
+
 
 var AddActivity = React.createClass({
 
@@ -49,10 +53,16 @@ var AddActivity = React.createClass({
   },
 
   render () {
+    var height = window.innerHeight - 41;
+    var styles = {
+      container: {height: height + 'px'},
+      form: {height: height - 104 + 'px'}
+    };
+
     return (
-      <div>
+      <div style={styles.container}>
         <InfoBar infoText="Describe activity" />
-        <form id="activity-form">
+        <form id="activity-form" style={styles.form}>
           <input id="activity-name-input"
                  type="text"
                  placeholder="Name this thing"
@@ -62,13 +72,14 @@ var AddActivity = React.createClass({
                  type="text"
                  placeholder="What's cool about it?"
                  onFocus={ this.handleDescriptionState }
-                 onChange={ this.handleDescriptionState }
-                 selectionStart={120} />
+                 onChange={ this.handleDescriptionState } />
           <div id="char-count" className={ this.state.countClass }>
             { this.state.charsRemaining }
           </div>
-          <div className="form-button">Next</div>
         </form>
+        <Button className={"progress-button"}>
+          <Link to="ChooseFriendsForActivity">Next</Link>
+        </Button>
       </div>
     )
   }

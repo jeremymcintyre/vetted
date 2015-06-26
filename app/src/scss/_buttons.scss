@@ -1,0 +1,16 @@
+.progress-button {
+  width: 100%;
+  background: $primary-light;
+  margin-top: -30px;
+
+  a {
+    padding: 15px 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      background: $accent-fallback-dark;
+    }
+  }
+}

@@ -44,10 +44,13 @@ html {
   @include black-with($secondary-opacity, 'background');
 }
 
-body {
-  position: relative;
-  width: 80%;
+body, .container {
+  width: 100%;
   max-width: 400px;
   height: 100%;
   background: $background;
+}
+
+.container {
+  height: auto;
 }

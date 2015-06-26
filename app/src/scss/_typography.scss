@@ -95,11 +95,16 @@ input, textarea {
   }
 }
 
-.form-button {
-  @include black-with($secondary-opacity, 'color');
-  font-size: 1.3em;
+.progress-button {
+  font-size: 1.1em;
+  text-align: center;
 
-  &:hover {
-    color: $background;
+  a {
+    text-decoration: none;
+    @include black-with($secondary-opacity, 'color');
+
+    &:hover {
+      color: $background;
+    }
   }
 }
