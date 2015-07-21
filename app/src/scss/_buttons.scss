@@ -11,6 +11,11 @@
     margin-top: $pad-top-bottom;
   }
 
+  &.inactive {
+    opacity: $secondary-opacity;
+    padding: 15px 0;
+  }
+
   a {
     padding: 15px 0;
     display: inline-block;

@@ -31,7 +31,8 @@ var AddActivity = React.createClass({
           charsRemaining: charsRemaining,
           countClass: this.charCountClass(charsRemaining)
         };
-    stateObject[stateKey] = charsRemaining;
+    stateObject[stateKey] = maxLength - charsRemaining;
+
     return stateObject;
   },
 
@@ -53,6 +54,9 @@ var AddActivity = React.createClass({
   },
 
   render () {
+    var button = (this.state.nameLength && this.state.descriptionLength) ?
+                 <Button className={"progress-button"}><Link to="ChooseFriendsForActivity">Next</Link></Button> :
+                 <Button className={"progress-button inactive"}>Next</Button>;
     return (
       <div>
         <InfoBar infoText="Describe activity" />
@@ -71,9 +75,7 @@ var AddActivity = React.createClass({
             { this.state.charsRemaining }
           </div>
         </form>
-        <Button className={"progress-button"}>
-          <Link to="ChooseFriendsForActivity">Next</Link>
-        </Button>
+        { button }
       </div>
     )
   }

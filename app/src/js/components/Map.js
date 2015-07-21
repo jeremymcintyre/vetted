@@ -31,5 +31,5 @@ var styles = {
   position: 'absolute',
   width: '100%',
   height: '40%',
-  minHeight: '300px'
+  minHeight: '200px'
 };
