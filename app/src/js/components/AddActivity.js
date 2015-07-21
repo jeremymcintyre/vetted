@@ -53,10 +53,16 @@ var AddActivity = React.createClass({
       return "getting-low";
   },
 
+  handleClick () {
+    if (this.state.nameLength && this.state.descriptionLength)
+      console.log("Store this to be saved at the end of the AddActivity flow");
+  },
+
   render () {
-    var button = (this.state.nameLength && this.state.descriptionLength) ?
-                 <Button className={"progress-button"}><Link to="ChooseFriendsForActivity">Next</Link></Button> :
-                 <Button className={"progress-button inactive"}>Next</Button>;
+    var buttonEnabled =
+      (this.state.nameLength && this.state.descriptionLength) ?
+      true : false;
+
     return (
       <div>
         <InfoBar infoText="Describe activity" />
@@ -75,7 +81,11 @@ var AddActivity = React.createClass({
             { this.state.charsRemaining }
           </div>
         </form>
-        { button }
+        <Button
+          handleClick={this.handleClick}
+          className={ 'progress-button' + (buttonEnabled ? '' : ' inactive') }>
+          { buttonEnabled ? <Link to="ChooseFriendsForActivity">Next</Link> : 'Next' }
+        </Button>
       </div>
     )
   }
